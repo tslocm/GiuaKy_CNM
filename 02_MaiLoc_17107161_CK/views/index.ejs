@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <header>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SanPham</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </header>
+    <body>
+        <div class="container">
+            <h2>Danh Muc Cac San Pham</h2>
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Ma San Pham</th>   
+                        <th>Ten San Pham</th>  
+                        <th>So Luong</th>    
+                        <th>Chon Cap Nhat</th>               
+                    </tr>
+                </thead>
+                <tbody>
+                    <%i = 1 %>
+                    <% _.forEach(data.Items, function(value) { %>                      
+                        <tr>
+                            <td><%= i %></td>
+                            <td><%= value.maSanPham %></td>
+                            <td><%= value.tenSanPham %></td>
+                            <td><%= value.soLuong %></td>
+                            <td><a href="/sinhvien/delete/<%= value.maSanPham %>" class="btn btn-danger">Xoa</a></td>
+                           
+                        </tr>
+                        <% i = i + 1 %>
+                        <% }) %>
+                </tbody>
+            </table>
+            
+        </div>
+    </body>
+
+
+</html>
